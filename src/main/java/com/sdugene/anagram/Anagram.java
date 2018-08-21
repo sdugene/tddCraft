@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class Anagram {
 
+    private Anagram() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static boolean compare(String string1, String string2) {
         boolean result = true;
         if (string1.length() != string2.length() || string1.length() < 2) {
