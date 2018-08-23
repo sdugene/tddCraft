@@ -3,7 +3,21 @@ package com.sdugene.render_tree;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class renderTest {
+
+    @Test
+    public void instantiateTest()
+    {
+        try {
+            Constructor<Render> c = Render.class.getDeclaredConstructor();
+            c.setAccessible(true);
+            c.newInstance();
+        } catch (Exception e) {
+            assert(true);
+        }
+    }
 
     @Test
     public void simpleWord() {

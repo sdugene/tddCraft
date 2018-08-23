@@ -3,7 +3,22 @@ package com.sdugene.string.calculator;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class StringCalculatorTest {
+
+    @Test
+    public void instantiateTest()
+    {
+        try {
+            Constructor<StringCalculator> c = StringCalculator.class.getDeclaredConstructor();
+            c.setAccessible(true);
+            c.newInstance();
+        } catch (Exception e) {
+            assert(true);
+        }
+    }
+
     @Test
     public void emptyString(){
         Assert.assertEquals(0, StringCalculator.add(""));

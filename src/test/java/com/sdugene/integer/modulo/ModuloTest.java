@@ -3,7 +3,21 @@ package com.sdugene.integer.modulo;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class ModuloTest {
+
+    @Test
+    public void instantiateTest()
+    {
+        try {
+            Constructor<Modulo> c = Modulo.class.getDeclaredConstructor();
+            c.setAccessible(true);
+            c.newInstance();
+        } catch (Exception e) {
+            assert(true);
+        }
+    }
 
     @Test
     public void moduloOne()

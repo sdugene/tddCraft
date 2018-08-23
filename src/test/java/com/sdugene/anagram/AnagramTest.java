@@ -1,10 +1,23 @@
 package com.sdugene.anagram;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class AnagramTest {
+
+    @Test
+    public void instantiateTest()
+    {
+        try {
+            Constructor<Anagram> c = Anagram.class.getDeclaredConstructor();
+            c.setAccessible(true);
+            c.newInstance();
+        } catch (Exception e) {
+            assert(true);
+        }
+    }
 
     @Test
     public void emptyString() {
